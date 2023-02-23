@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TabApp</name>
+    </assembly>
+    <members>
+        <member name="P:TabApp.ViewModel.FriendViewModel.Friends">
+            <inheritdoc cref="F:TabApp.ViewModel.FriendViewModel.friends"/>
+        </member>
+    </members>
+</doc>

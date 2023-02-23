@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TabApp.Pages.ChatPage"
+             Title="ChatPage"
+             Shell.NavBarIsVisible="False">
+    <CollectionView ItemsSource="{Binding Friends}">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Grid ColumnDefinitions="0.22*,0.55*,0.23*" RowDefinitions="*,*,Auto" HeightRequest="80">
+                    <Frame Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" WidthRequest="10" HeightRequest="10" CornerRadius="50" IsClippedToBounds="True" HasShadow="False" Padding="5" Margin="7"> 
+                            <Image Source="{Binding Picture}" WidthRequest="100" HeightRequest="100" Aspect="AspectFill"/>
+                        </Frame>
+                    <Label Text="{Binding Name}" FontSize="17" TextColor="Black" HorizontalOptions="Start" Grid.Column="1" Grid.Row="0" />
+                    <Label Text="{Binding Message}" FontSize="12" TextColor="Gray" HorizontalOptions="Start" Grid.Column="1" Grid.Row="1" />
+                    <Label Text="{Binding LastChatTime}" Margin="0,0,5,0" FontSize="12" TextColor="Gray" HorizontalOptions="End" Grid.Column="2" Grid.Row="0" />
+                    <BoxView HeightRequest="0.3" Color="LightGray" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Grid.GestureRecognizers>
+                </Grid>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>
